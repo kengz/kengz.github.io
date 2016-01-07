@@ -176,7 +176,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], () =>
+gulp.task('serve:main', ['default'], () =>
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -186,7 +186,7 @@ gulp.task('serve:dist', ['default'], () =>
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist',
+    server: '.',
     port: 3001
   })
 );
