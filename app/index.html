@@ -67,6 +67,7 @@
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark ">
         <a href="#me" class="mdl-layout__tab is-active">.me</a>
+        <a href="#blog" class="mdl-layout__tab">.blog</a>
         <a href="#github" class="mdl-layout__tab">.github</a>
         <a href="#math" class="mdl-layout__tab">.math</a>
         <a href="#cs" class="mdl-layout__tab">.cs</a>
@@ -122,6 +123,53 @@
       <div class="mdl-layout__tab-panel" id="github">
         <section class="section--center mdl-grid" id="github-cards">
           <!-- insertion from github.js -->
+        </section>
+      </div>
+
+
+      <div class="mdl-layout__tab-panel" id="blog">
+        <section class="section--center mdl-grid">
+          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            ---
+            layout: default
+            title: Home
+            ---
+
+            <div class="posts">
+              {% for post in paginator.posts %}
+              <div class="post">
+                <h1 class="post-title">
+                  <a href="{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                </h1>
+
+                <span class="post-date">{{ post.date | date_to_string }}</span>
+
+                {{ post.content }}
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="pagination">
+              {% if paginator.next_page %}
+              <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+              {% else %}
+              <span class="pagination-item older">Older</span>
+              {% endif %}
+              {% if paginator.previous_page %}
+              {% if paginator.page == 2 %}
+              <a class="pagination-item newer" href="/">Newer</a>
+              {% else %}
+              <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+              {% endif %}
+              {% else %}
+              <span class="pagination-item newer">Newer</span>
+              {% endif %}
+            </div>
+          </div>
+
+
         </section>
       </div>
 
