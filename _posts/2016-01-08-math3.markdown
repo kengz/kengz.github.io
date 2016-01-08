@@ -1,0 +1,7 @@
+---
+published: true
+title: Math3
+layout: post
+---
+# math3 post
+cuz tinypress is pussy
