@@ -216,6 +216,9 @@ html, body {
 .flexend {
   justify-content: flex-end !important;
 }
-body.ready {
-  box-shadow: : none !important;
+.padleft {
+  padding-left: 15px !important;
+}
+.mega-octicon {
+  font-size: 48px !important;
 }
