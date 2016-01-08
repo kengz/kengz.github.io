@@ -91,7 +91,7 @@
     });
 
     $.get('https://api.github.com/users/kengz/repos', function(data) {
-      _.each(getTopRepos(data, 7), function(row) {
+      _.each(getTopRepos(data, 11), function(row) {
         injectRepoCard(row, function(res) {
           $('#github-cards').append(res);
         });

@@ -225,6 +225,10 @@ html, body {
 .no-border {
   border: none !important;
 }
-.undecorate:link {
+.undecorate, .undecorate:link {
   text-decoration: none;
+  list-style-type: none;
+}
+.name {
+  color: #4DD0E1;
 }
