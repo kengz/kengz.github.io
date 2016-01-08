@@ -1,0 +1,9 @@
+---
+published: true
+title: Math2
+layout: post
+tags: [math]
+categories: [math]
+---
+# Math 2
+test 2
