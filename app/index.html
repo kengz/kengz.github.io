@@ -54,6 +54,11 @@
   <!-- to use octicons -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
 
+  <!-- for tinypress blog -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -130,39 +135,52 @@
       <div class="mdl-layout__tab-panel" id="blog">
         <section class="section--center mdl-grid">
           <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-
-
-            <div class="posts">
-              {% for post in paginator.posts %}
-              <div class="post">
-                <h1 class="post-title">
-                  <a href="{{ post.url }}">
-                    {{ post.title }}
-                  </a>
-                </h1>
-
-                <span class="post-date">{{ post.date | date_to_string }}</span>
-
-                {{ post.content }}
+          <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+          content to avoid any CSS collisions with our real content. -->
+          <div class="wrap">
+            <div class="masthead">
+              <div class="container">
+                <h3 class="masthead-title">
+                  <a href="/" title="Home">{{ site.title }}</a>
+                  <small>{{ site.tagline }}</small>
+                </h3>
               </div>
-              {% endfor %}
             </div>
 
-            <div class="pagination">
-              {% if paginator.next_page %}
-              <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
-              {% else %}
-              <span class="pagination-item older">Older</span>
-              {% endif %}
-              {% if paginator.previous_page %}
-              {% if paginator.page == 2 %}
-              <a class="pagination-item newer" href="/">Newer</a>
-              {% else %}
-              <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
-              {% endif %}
-              {% else %}
-              <span class="pagination-item newer">Newer</span>
-              {% endif %}
+            <div class="container content">
+              <div class="posts">
+                {% for post in paginator.posts %}
+                <div class="post">
+                  <h1 class="post-title">
+                    <a href="{{ post.url }}">
+                      {{ post.title }}
+                    </a>
+                  </h1>
+
+                  <span class="post-date">{{ post.date | date_to_string }}</span>
+
+                  {{ post.content }}
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="pagination">
+                {% if paginator.next_page %}
+                <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+                {% else %}
+                <span class="pagination-item older">Older</span>
+                {% endif %}
+                {% if paginator.previous_page %}
+                {% if paginator.page == 2 %}
+                <a class="pagination-item newer" href="/">Newer</a>
+                {% else %}
+                <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+                {% endif %}
+                {% else %}
+                <span class="pagination-item newer">Newer</span>
+                {% endif %}
+              </div>
+
             </div>
           </div>
 

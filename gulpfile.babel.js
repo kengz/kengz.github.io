@@ -34,6 +34,7 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
+import rename from 'gulp-rename'
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -61,12 +62,27 @@ gulp.task('images', () =>
 gulp.task('copy', () =>
   gulp.src([
     'app/*',
-    // '!app/*.html',
+    // Keng's hack: exclude index.html now
+    '!app/index.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
   }).pipe(gulp.dest('.'))
     .pipe($.size({title: 'copy'}))
+);
+
+// Keng's hack: copy the minified ./index.html to _layouts/default.html
+gulp.task('copy-minified-to-layout', ['copy', 'html'], () =>
+  gulp.src('./index.html')
+  // .pipe(rename('_layouts/index.html'))
+  .pipe(gulp.dest('_layouts/'))
+);
+
+// Keng's hack: copy the tinypress index.html template to override ./index.html
+gulp.task('copy-tinypress-override', ['copy-minified-to-layout', 'html'], () =>
+  gulp.src('./tinypress_index.html')
+  .pipe(rename('index.html'))
+  .pipe(gulp.dest('.'))
 );
 
 // Compile and automatically prefix stylesheets
@@ -187,7 +203,7 @@ gulp.task('serve:main', ['default'], () =>
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: '.',
+    server: '_layouts',
     port: 3001
   })
 );
@@ -196,7 +212,7 @@ gulp.task('serve:main', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'scripts', 'images', 'copy', 'copy-minified-to-layout', 'copy-tinypress-override'],
     'generate-service-worker',
     cb
   )
