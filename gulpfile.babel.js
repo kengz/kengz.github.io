@@ -74,7 +74,9 @@ gulp.task('copy', () =>
 // Keng's hack: copy the minified ./index.html to _layouts/default.html
 gulp.task('copy-minified-to-layout', ['copy', 'html'], () =>
   gulp.src('./index.html')
-  .pipe(rename('_layouts/default.html'))
+  .pipe(gulp.dest('./_layouts'))
+  // copy to root for actual preview of _layout
+  .pipe(rename('layout_preview.html'))
   .pipe(gulp.dest('.'))
 );
 
@@ -102,8 +104,7 @@ gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/styles/**/*.scss',
-    'app/styles/**/*.css',
-    'public/**/*.css'
+    'app/styles/**/*.css'
   ])
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
@@ -114,7 +115,8 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.minifyCss()))
-    .pipe($.concat('main.css'))
+    .pipe($.concat('main.min.css'))
+    // Output files
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./styles'));
@@ -150,13 +152,13 @@ gulp.task('html', () => {
   return gulp.src('app/**/*.html')
     .pipe($.useref({searchPath: '{.tmp,app}'}))
     // Remove any unused CSS
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: []
-    })))
+    // .pipe($.if('*.css', $.uncss({
+    //   html: [
+    //     'app/index.html'
+    //   ],
+    //   // CSS Selectors for UnCSS to ignore
+    //   ignore: []
+    // })))
 
     // Concatenate and minify styles
     // In case you are still using useref build blocks
@@ -205,7 +207,10 @@ gulp.task('serve:main', ['default'], () =>
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: '_layouts',
+    server: {
+      baseDir: '.',
+      index: 'layout_preview.html'
+    },
     port: 3001
   })
 );

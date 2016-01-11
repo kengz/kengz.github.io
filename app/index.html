@@ -48,11 +48,14 @@
   <!-- Material Design icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <!-- Your styles -->
-  <link rel="stylesheet" href="styles/main.css">
-
   <!-- to use octicons -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+
+  <!-- Your styles -->
+  <!-- build:css styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/keng.css">
+  <!-- endbuild -->
 
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
@@ -79,19 +82,63 @@
 
       <div class="mdl-layout__tab-panel is-active" id="blog">
         <section class="section--center mdl-grid">
-          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--1-col-tablet spacer"></div>
+
+          <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+
           <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
           content to avoid any CSS collisions with our real content. -->
+
+
+          <!-- build:remove   -->
+          <div class="post">
+            <h4 class="post-title">
+              <a href="#">
+                Sample title
+              </a>
+            </h4>
+
+            <span class="post-date">09 Jan 2016</span>
+
+            <p>Lorem ipsum dolor sit amet</p>
+
+            <pre><code>/usr/local/bin
+            </code></pre>
+
+            <p>Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis proident minim.</p>
+
+            <p>Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.</p>
+
+            <ul>
+              <li>
+                <p>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</p>
+
+                <pre><code>sudo chflags norestricted /usr/local &amp;&amp; sudo chown $(whoami):admin /usr/local &amp;&amp; sudo chown -R $(whoami):admin /usr/local
+                </code></pre>
+              </li>
+              <li>
+                <p>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</p>
+              </li>
+              <li>
+                <p>Lorem labore proident officia excepteur do.</p>
+              </li>
+            </ul>
+
+            <p>Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.</p>
+
+          </div>
+          <!-- endbuild -->
+
           <div class="wrap">
-            <div class="container content">
+            <div class="container content ">
               <div class="posts">
                 {% for post in paginator.posts %}
                 <div class="post">
-                  <h1 class="post-title">
+                  <h4 class="post-title">
                     <a href="{{ post.url }}">
                       {{ post.title }}
                     </a>
-                  </h1>
+                  </h4>
 
                   <span class="post-date">{{ post.date | date_to_string }}</span>
 
@@ -127,9 +174,8 @@
 
 
       <div class="mdl-layout__tab-panel" id="me">
-        <section class="section--center mdl-grid">
-
-          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <section class="section--center mdl-grid mdl-grid--no-spacing">
+          <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
               <h6>Hello,</h6>
 
@@ -396,6 +442,7 @@
             <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
             <h1 class="mdl-mega-footer--heading">Curious about the page?</h1>
             <ul class="mdl-mega-footer--link-list">
+              <li><a href="http://kengz.me">This template is hacked together by kengz</a></li>
               <li><a href="http://www.getmdl.io">Google MDL</a></li>
               <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
               <li><a href="https://pages.github.com">Github Pages</a></li>
@@ -406,15 +453,18 @@
     </main>
   </div>
 
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+
+
   <!-- jQuery -->
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
-  <!-- build:js(app/) ../../scripts/main.min.js -->
+  <!-- build:js scripts/main.min.js -->
   <script src="scripts/main.js"></script>
   <script src="scripts/github.js"></script>
   <!-- endbuild -->
+
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <!-- <script>
