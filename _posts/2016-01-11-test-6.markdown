@@ -1,0 +1,6 @@
+---
+published: true
+title: test 6
+layout: post
+---
+shall paginate
