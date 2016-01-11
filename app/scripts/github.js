@@ -86,7 +86,7 @@
   function injectGithub() {
     $.get('https://api.github.com/users/kengz', function(data) {
       injectProfileCard(data, function(res) {
-        $('#github-cards').append(res);
+        $('#github-cards').prepend(res);
       });
     });
 

@@ -74,8 +74,8 @@ gulp.task('copy', () =>
 // Keng's hack: copy the minified ./index.html to _layouts/default.html
 gulp.task('copy-minified-to-layout', ['copy', 'html'], () =>
   gulp.src('./index.html')
-  // .pipe(rename('_layouts/index.html'))
-  .pipe(gulp.dest('_layouts/'))
+  .pipe(rename('_layouts/default.html'))
+  .pipe(gulp.dest('.'))
 );
 
 // Keng's hack: copy the tinypress index.html template to override ./index.html
@@ -102,7 +102,8 @@ gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/styles/**/*.scss',
-    'app/styles/**/*.css'
+    'app/styles/**/*.css',
+    'public/**/*.css'
   ])
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
@@ -113,8 +114,9 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.minifyCss()))
+    .pipe($.concat('main.css'))
     .pipe($.size({title: 'styles'}))
-    .pipe($.sourcemaps.write('./'))
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./styles'));
 });
 

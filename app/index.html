@@ -54,11 +54,6 @@
   <!-- to use octicons -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
 
-  <!-- for tinypress blog -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
-
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -71,8 +66,8 @@
       <div class="mdl-layout__header-row">
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark ">
-        <a href="#me" class="mdl-layout__tab is-active">.me</a>
-        <a href="#blog" class="mdl-layout__tab">.blog</a>
+        <a href="#blog" class="mdl-layout__tab is-active">.blog</a>
+        <a href="#me" class="mdl-layout__tab">.me</a>
         <a href="#github" class="mdl-layout__tab">.github</a>
         <a href="#math" class="mdl-layout__tab">.math</a>
         <a href="#cs" class="mdl-layout__tab">.cs</a>
@@ -80,73 +75,14 @@
     </header>
     <main class="mdl-layout__content">
 
-      <div class="mdl-layout__tab-panel is-active" id="me">
-        <section class="section--center mdl-grid">
-
-          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-              <h6>Hello,</h6>
-
-              <div class="section__text mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-                <h4>
-                  my name is <span class="name">Keng</span>.
-                </h4>
-                <h6>
-                  I do silly things, like: 
-                </h6>
-                <ul class="undecorate toc">
-
-                  <li><a target="_blank" href="https://github.com/kengz/Quantum-Foundations-Correlations">quantum physics</a></li>
-                  <li>philosophy</li>
-                  <li><a href="#math">mathematics</a></li>
-                  <li>calligraphy</li>
-                  <li><a href="#cs">computer science</a></li>
-                  <li>A.I.</li>
-                  <li><a target="_blank" href="https://github.com/kengz/Machines">Turing Machines</a></li>
-                  <li>erging</li>
-                  <li><a target="_blank" href="https://github.com/kengz?tab=repositories">software engineering</a></li>
-                  <li>coffee-binging</li>
-                  <li>beer-loving</li>
-                  <li>tiramisu-hunting</li>
-                  <li>avocado-hating</li>
-                  <li>sneezing at wool (I'm allergic :P)</li>
-                  <li>loathing about terrible typography</li>
-                </ul>
-              </div>
-            </div>
-            <div class="mdl-card__actions">
-              <a href="mailto:kengzwl@gmail.com" class="mdl-button">Email me here</a>
-            </div>
-          </div>
 
 
-        </section>
-
-
-      </div>
-      
-      <div class="mdl-layout__tab-panel" id="github">
-        <section class="section--center mdl-grid" id="github-cards">
-          <!-- insertion from github.js -->
-        </section>
-      </div>
-
-
-      <div class="mdl-layout__tab-panel" id="blog">
+      <div class="mdl-layout__tab-panel is-active" id="blog">
         <section class="section--center mdl-grid">
           <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
           <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
           content to avoid any CSS collisions with our real content. -->
           <div class="wrap">
-            <!-- <div class="masthead"> -->
-              <!-- <div class="container"> -->
-                <!-- <h3 class="masthead-title"> -->
-                  <!-- <a href="/" title="Home">{{ site.title }}</a> -->
-                  <!-- <small>{{ site.tagline }}</small> -->
-                <!-- </h3> -->
-              <!-- </div> -->
-            <!-- </div> -->
-
             <div class="container content">
               <div class="posts">
                 {% for post in paginator.posts %}
@@ -187,6 +123,58 @@
 
         </section>
       </div>
+
+
+
+      <div class="mdl-layout__tab-panel" id="me">
+        <section class="section--center mdl-grid">
+
+          <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+              <h6>Hello,</h6>
+
+              <div class="section__text mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <h4>
+                  my name is <span class="name">Keng</span>.
+                </h4>
+                <h6>
+                  I do silly things, like: 
+                </h6>
+                <ul class="undecorate toc">
+
+                  <li><a target="_blank" href="https://github.com/kengz/Quantum-Foundations-Correlations">quantum physics</a></li>
+                  <li>philosophy</li>
+                  <li><a href="#math">mathematics</a></li>
+                  <li>calligraphy</li>
+                  <li><a href="#cs">computer science</a></li>
+                  <li>A.I.</li>
+                  <li><a target="_blank" href="https://github.com/kengz/Machines">Turing Machines</a></li>
+                  <li>erging</li>
+                  <li><a target="_blank" href="https://github.com/kengz?tab=repositories">software engineering</a></li>
+                  <li>coffee-binging</li>
+                  <li>beer-loving</li>
+                  <li>tiramisu-hunting</li>
+                  <li>avocado-hating</li>
+                  <li>sneezing at wool (I'm allergic :P)</li>
+                  <li>loathing about terrible typography</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mdl-card__actions">
+              <a href="mailto:kengzwl@gmail.com" class="mdl-button mdl-js-button mdl-button--accent">Email me here</a>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
+
+      <div class="mdl-layout__tab-panel" id="github">
+        <section class="section--center mdl-grid" id="github-cards">
+          <!-- insertion from github.js -->
+        </section>
+      </div>
+      
 
 
       <div class="mdl-layout__tab-panel" id="math">
