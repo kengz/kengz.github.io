@@ -102,21 +102,33 @@
 
             <p>Lorem ipsum dolor sit amet</p>
 
-            <pre><code>/usr/local/bin
-            </code></pre>
+            <div class="highlight"><pre><code class="text language-text" data-lang="text"># Build settings
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
+  input: GFM
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
+</code></pre></div> 
 
             <p>Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis proident minim.</p>
 
-            <p>Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.</p>
+            <p>Put your custom <code>.css</code> files under <code>app/styles/</code>, and link them in <code>index.html</code> under the <code>build:css</code> clause.</p>
 
             <ul>
               <li>
                 <p>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</p>
 
-                <pre><code>sudo chflags norestricted /usr/local &amp;&amp; sudo chown $(whoami):admin /usr/local &amp;&amp; sudo chown -R $(whoami):admin /usr/local
-                </code></pre>
-                <pre><code>sudo chflags norestricted /usr/local &amp;&amp; sudo chown $(whoami):admin /usr/local &amp;&amp; sudo chown -R $(whoami):admin /usr/local
-                </code></pre>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrap&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container content &quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;posts&quot;</span><span class="nt">&gt;</span>
+                  ...<span class="c">&lt;!-- template string here --&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                </code></pre></div>
               </li>
               <li>
                 <p>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</p>
