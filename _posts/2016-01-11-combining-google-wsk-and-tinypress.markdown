@@ -51,12 +51,12 @@ Now that the build system is set up, you can design the site. The original WSK p
 
 For Tinypress to be able to inject under the blog section, we add the template string snippet in `app/index.html`, like so:
 
+
 ```html
 <div class="wrap">
   <div class="container content ">
     <div class="posts">
-      {% for post in paginator.posts %}
-       ...
+       ...<!-- template string here -->
     </div>
   </div>
 </div>
