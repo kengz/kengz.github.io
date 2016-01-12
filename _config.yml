@@ -1,8 +1,11 @@
 excerpt_separator: ""
 pygments: true
-markdown: kramdown
-url: https://kengz.github.io
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+url: https://kengz.me
 title: kengz
 tagline: Kengz.me
-description: No pussy
+description: Mein blog
 paginate: 5
