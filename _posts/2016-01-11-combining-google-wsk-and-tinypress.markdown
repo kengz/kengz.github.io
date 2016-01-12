@@ -71,7 +71,7 @@ Put your custom `.css` files under `app/styles/`, and link them in `index.html` 
 <!-- endbuild -->
 ```
 
-Put your custom `.js` files under `app/scripts/`, and link them in `index.html` under the `build:js` clause/
+Put your custom `.js` files under `app/scripts/`, and link them in `index.html` under the `build:js` clause.
 
 ```html
 <!-- build:js scripts/main.min.js -->
