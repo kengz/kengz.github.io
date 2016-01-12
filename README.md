@@ -1,78 +1,146 @@
-# [![Web Starter Kit](https://cloud.githubusercontent.com/assets/110953/11445049/f05512ba-9520-11e5-8fdb-8c8eb5f690d0.jpg)](https://github.com/google/web-starter-kit/releases/latest)
+# Google WSK and Tinypress
 
-## Overview
+This is the source repo of my website-blog [kengz.me](http://kengz.me). It is made with [Github Pages](https://pages.github.com), [Google Web Starter Kit(WSK)](https://github.com/google/web-starter-kit), and [Tinypress](https://tinypress.co).
 
-[Web Starter Kit](https://developers.google.com/web/starter-kit) is an opinionated boilerplate for web development. Tools for building a great experience across many devices and [performance oriented](#web-performance). Helping you to stay productive following the best practices outlined in Google's [Web Fundamentals](https://developers.google.com/web/fundamentals). A solid starting point for both professionals and newcomers to the industry.
+It hosts a full webpage on **Github Pages**, with the design done on **Google WSK**, and also houses a minimal **Tinypress** blog. The hosting, webpage design, and blog posting/injection are all very minimal and fast - that's the point.
 
-### Features
+Fork this repo to use the entire setup.
 
-| Feature                                | Summary                                                                                                                                                                                                                                                     |
-|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Responsive boilerplate | A responsive boilerplate optimized for the multi-screen web. Powered by [Material Design Lite](http://getmdl.io).  You're free to use either this or a completely clean-slate  via [basic.html](https://github.com/google/web-starter-kit/blob/master/app/basic.html).                          |
-| Sass support                           | Compile [Sass](http://sass-lang.com/) into CSS with ease, bringing support for variables, mixins and more. (Run `gulp serve` or `gulp` for production)                                                                                                      |
-| Performance optimization               | Minify and concatenate JavaScript, CSS, HTML and images to help keep your pages lean. (Run `gulp` to create an optimised version of your project to `/dist`)                                                                                                |
-| Code Linting               | JavaScript code linting is done using [ESLint](http://eslint.org) - a pluggable linter tool for identifying and reporting on patterns in JavaScript. Web Starter Kit uses ESLint with [eslint-config-google](https://github.com/google/eslint-config-google), which tries to follow the Google JavaScript style guide.                                                                                                |
-| ES2015 via Babel 6.0                   | Optional ES2015 support using [Babel](https://babeljs.io/). To enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the [.babelrc](.babelrc) file. ES2015 source code will be automatically transpiled to ES5 for wide browser support.  |
-| Built in HTTP Server                   | A built-in server for previewing your site locally while you develop and iterate                                                                                                                                                                            |
-| Live Browser Reloading                 | Reload the browser in real-time anytime an edit is made without the need for an extension. (Run `gulp serve` and edit your files)                                                                                                                           |
-| Cross-device Synchronization           | Synchronize clicks, scrolls, forms and live-reload across multiple devices as you edit your project. Powered by [BrowserSync](http://browsersync.io). (Run `gulp serve` and open up the IP provided on other devices on your network)                       |
-| Offline support                     | Thanks to our baked in [Service Worker](http://www.html5rocks.com/en/tutorials/service-worker/introduction/) [pre-caching](https://github.com/google/web-starter-kit/blob/master/gulpfile.babel.js#L226), sites deploying `dist` to a HTTPS domain will enjoy offline support. This is made possible by [sw-precache](https://github.com/GoogleChrome/sw-precache/).                                                                                                                                              |
-| PageSpeed Insights                     | Web performance metrics showing how well your site performs on mobile and desktop (Run `gulp pagespeed`)                                                                                                                                                    |
+## Tl;dr
 
-## Quickstart
+Do all your dev and place all your `.html, .css, .scss, .js` etc. resource files in `app/`. Touch nothing else.
 
-[Download](https://github.com/google/web-starter-kit/releases/latest) the kit or clone this repository and build on what is included in the `app` directory.
+Put your custom `.css` files under `app/styles/`, and link them in `index.html` under the `build:css` clause.
 
-There are two HTML starting points, from which you can choose:
+```html
+<!-- Your styles -->
+<!-- build:css styles/main.min.css -->
+<link rel="stylesheet" href="styles/yourstyle.css">
+<!-- endbuild -->
+```
 
-- `index.html` - (IE10+) the default starting point, containing Material Design layout.
-- `basic.html` - (IE8+) no layout, but still includes our minimal mobile best-practices
+Put your custom `.js` files under `app/scripts/`, and link them in `index.html` under the `build:js` clause/
 
-Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run WSK.
-Once you have verified that your system can run WSK, check out the [commands](docs/commands.md) available to get started.
+```html
+<!-- build:js scripts/main.min.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/github.js"></script>
+<!-- endbuild -->
+```
 
-## Web Performance
+The `gulp` build system will pick up the resources, minify and optimize them, then relink the new resources for you. 
 
-Web Starter Kit strives to give you a high performance starting point out of the box. Our median Web Page Test [scores](http://www.webpagetest.org/result/151201_VW_XYC/) for the default template have a [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) of ~1100 (1000 is ideal) and a repeat-visit Speed Index of ~550 thanks to Service Worker precaching. 
+When developing, to compile and live-preview the dev build, do
 
-## Browser Support
+```bash
+gulp serve
+```
 
-At present, we officially aim to support the following browsers:
+When you're done, to compile and live-preview the deployment build, do
 
-* IE9, IE10, IE11, IE Mobile 10
-* FF 30, 31
-* Chrome 34, 35
-* Safari 7, 8
-* Opera 23, 24
-* iOS Safari 7, 8
-* Opera Coast
-* Android / Chrome 4.4, 4.4.3
-* BlackBerry 10
+```bash
+gulp serve:main
+# or without preview, do
+gulp
+```
 
-This is not to say that Web Starter Kit cannot be used in browsers older than those reflected, but merely that our focus will be on ensuring our layouts work great in the above.
+Then deploy to your page. Use **Tinypress** as usual; your blog will appear where the template string is injected in WSK.
 
-## Troubleshooting
 
-If you find yourself running into issues during installation or running the tools, please check our [Troubleshooting](https://github.com/google/web-starter-kit/wiki/Troubleshooting) guide and then open an [issue](https://github.com/google/web-starter-kit/issues). We would be happy to discuss how they can be solved.
+## Details
 
-## A Boilerplate-only Option
+The details of how Github Pages, Google WSK and Tinypress as hacked together is detailed in my blogpost, which I included as excerp below:
 
-If you would prefer not to use any of our tooling, delete the following files from the project: `package.json`, `gulpfile.babel.js`, `.jshintrc` and `.travis.yml`. You can now safely use the boilerplate with an alternative build-system or no build-system at all if you choose.
+Keng is really lazy; he wants to code as little as possible for this project.
 
-## Docs and Recipes
+We have two aims here:
 
-* [File Appendix](https://github.com/google/web-starter-kit/blob/master/docs/file-appendix.md) - What do the different files here do?
-* [Using Material Design Lite's Sass](https://github.com/google/web-starter-kit/blob/master/docs/mdl-sass.md) - how to get MDL's Sass working with WSK
-* [Deployment guides](https://github.com/google/web-starter-kit/blob/master/docs/deploy.md) - available for Firebase, Google App Engine and other services.
-* [Gulp recipes](https://github.com/gulpjs/gulp/tree/master/docs/recipes) - the official Gulp recipes directory includes a comprehensive list of guides for different workflows you can add to your project.
+- a website with sections for different topics
+- a section dedicated for blogging
 
-## Inspiration
+Let's get started. The source code is hosted on [my repo](https://github.com/kengz/kengz.github.io).
 
-Web Starter Kit is inspired by [Mobile HTML5 Boilerplate](http://html5boilerplate.com/mobile/) and Yeoman's [generator-gulp-webapp](https://github.com/yeoman/generator-gulp-webapp), having taken input from contributors to both projects during development. Our [FAQs](https://github.com/google/web-starter-kit/wiki/FAQ) attempt to answer commonly asked questions about the project.
+We will host the site with [Github Pages](https://pages.github.com). Follow their instructions.
 
-## Contributing
+For the website we use [Google Web Starter Kit (WSK)](https://github.com/google/web-starter-kit). It is styled with [Google MDL](http://www.getmdl.io). You can also see it as a static-site generator. WSK houses a lot of optimization tools written by the Google team, and it uses familiar build tools such as `minify` and `gulp` for streamlined building.
 
-Contributions, questions and comments are all welcome and encouraged. For code contributions to Web Starter Kit, please see our [Contribution guide](CONTRIBUTING.md) before submitting a pull request. [Website](https://developers.google.com/web/starter-kit/) related issues should be filed on the [Web Fundamentals](https://github.com/google/WebFundamentals/issues/new) issue tracker.
+For blogging we use [Tinypress](https://tinypress.co), which is really minimal - just write your post on the site in `Markdown`, then hit `post`. Tinypress will then push your material to your github pages.
+
+But, it's not really that easy, is it? We wish to house the blog under a section of the website. The problem is - Tinypress or Jekyll needs to control and setup the root `index.html`, i.e. it needs an empty repo to create a full site with its own resources. So, if you start with Tinypress, you can't really customize it much to be a website; instead you'll just get a bare blog.
+
+So, Keng spent some time cracking Tinypress, and hacked it to merge under the Google WSK website.
+
+
+### Build System
+
+Suppose you have set up your Github Pages together with the [CNAME](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/). Note that Github Pages needs an `index.html` at the root; this is a must.
+
+Next, clone the [Google WSK](https://github.com/google/web-starter-kit) elsewhere and copy the content **(except its .git!)** into your Github Pages repo. We need to hack its `gulp` to tweak the default build.
+
+Suppose you know how to run `gulp`; otherwise [it's really simple](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md). Just install it, and run the commands from the terminal at project root.
+
+This is how WSK organizes their folders and builds:
+
+- `app/` is where you do all the developments and tests. The `app/` folder contains all website resources such as the `.html`, `.css`, `.scss` and `.js` files. Summon the dev build/preview by the command `gulp serve`.
+
+- `dist/` houses the files for deployment. `gulp` will source from `app/`, minifies and optimizes files, and copy the built files to `dist/`. `gulp serve:main` runs the build then pulls up a deployment preview.
+
+Now, recall that Github Pages requires the root folder to be the deployment build folder, since it needs `index.html` at root. Keng has modified the `gulpfile` so that the deployment build writes to the root. Use the same `gulp` commands as before.
+
+
+### Website
+
+Now that the build system is set up, you can design the site. The original WSK provides a good starting boilerplate. Refer to [Google MDL](http://www.getmdl.io) for usage. Or, you can look at the my `app/` folder. The page you're currently viewing has multiple tabs for different sections. 
+
+For Tinypress to be able to inject under the blog section, we add the template string snippet in `app/index.html`, like so:
+
+
+```html
+<div class="wrap">
+  <div class="container content ">
+    <div class="posts">
+       ...<!-- template string here -->
+    </div>
+  </div>
+</div>
+```
+
+Put your custom `.css` files under `app/styles/`, and link them in `index.html` under the `build:css` clause.
+
+```html
+<!-- Your styles -->
+<!-- build:css styles/main.min.css -->
+<link rel="stylesheet" href="styles/yourstyle.css">
+<!-- endbuild -->
+```
+
+Put your custom `.js` files under `app/scripts/`, and link them in `index.html` under the `build:js` clause.
+
+```html
+<!-- build:js scripts/main.min.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/github.js"></script>
+<!-- endbuild -->
+```
+
+The `gulp` build system will pick up the resources, minify and optimize them, then relink the new resources for you.
+
+
+### Blog
+
+Next, we wish to house the Tinypress a section, without changing how we post from it. Recall also, now that we have occupied the root folder, Tinypress cannot setup its resources normally. We need to hack.
+
+Tinypress uses template strings. You will see the folders `_includes/`, `_layouts/` and `_posts`. Just so that Tinypress still gets access to the root `index.html`, we add `tinypress_index.html`. 
+
+The deployment build will finish building the resources, move the completed build `index.html` into `layout_preview.html` for live preview, then copy `tinypress_index.html` into `index.html` for Tinypress to use.
+
+With the template string we injected earlier into `app/index.html`, now Tinypress gets a handle on the repo to inject the Markdown blog contents.
+
+
+### Build
+
+You're basically done. With the build system set up, and a small hack for Tinypress, you can update and customize the website however you like, and can write blog posts very easily from Tinypress. The best of both worlds!
+
 
 ## License
 
