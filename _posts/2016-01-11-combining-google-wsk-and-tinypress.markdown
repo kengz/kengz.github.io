@@ -28,7 +28,7 @@ But, it's not really that easy, is it? We wish to house the blog under a section
 So, Keng spent some time cracking Tinypress, and hacked it to merge under the Google WSK website.
 
 
-### Build System
+#### Build System
 
 Suppose you have set up your Github Pages together with the [CNAME](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/). Note that Github Pages needs an `index.html` at the root; this is a must.
 
@@ -45,7 +45,7 @@ This is how WSK organizes their folders and builds:
 Now, recall that Github Pages requires the root folder to be the deployment build folder, since it needs `index.html` at root. Keng has modified the `gulpfile` so that the deployment build writes to the root. Use the same `gulp` commands as before.
 
 
-### Website
+#### Website
 
 Now that the build system is set up, you can design the site. The original WSK provides a good starting boilerplate. Refer to [Google MDL](http://www.getmdl.io) for usage. Or, you can look at the my `app/` folder. The page you're currently viewing has multiple tabs for different sections. 
 
@@ -83,7 +83,7 @@ Put your custom `.js` files under `app/scripts/`, and link them in `index.html` 
 The `gulp` build system will pick up the resources, minify and optimize them, then relink the new resources for you.
 
 
-### Blog
+#### Blog
 
 Next, we wish to house the Tinypress a section, without changing how we post from it. Recall also, now that we have occupied the root folder, Tinypress cannot setup its resources normally. We need to hack.
 
@@ -94,6 +94,6 @@ The deployment build will finish building the resources, move the completed buil
 With the template string we injected earlier into `app/index.html`, now Tinypress gets a handle on the repo to inject the Markdown blog contents.
 
 
-### Build
+#### Build
 
 You're basically done. With the build system set up, and a small hack for Tinypress, you can update and customize the website however you like, and can write blog posts very easily from Tinypress. The best of both worlds!
