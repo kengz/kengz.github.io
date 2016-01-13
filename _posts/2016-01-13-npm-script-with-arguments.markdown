@@ -25,12 +25,12 @@ I fiddled with `npm` and `bash` for hours and got it figured out. Basically we u
 Below is my snippet from `package.json`:
 
 ```json
-...
+{
 "scripts": {
     "start": "npm run deploy",
     "deploy": "if [ $npm_config_bot ]; then bot=$npm_config_bot; echo Bot is SET to: $bot; else bot=peppurr; echo Bot is DEFAULTED to $bot; fi; DEPLOY=.keys-$bot forever start --uid $bot index.js"
-  },
-...
+  }
+}
 ```
 
 Beware that if the command is split into separate `npm` scripts, due to the local scoping you'd actually lose the `$bot` variable. That's why `deploy` is such a long command.
