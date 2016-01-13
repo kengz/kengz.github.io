@@ -20,3 +20,5 @@ tagline: Kengz.me
 description: Mein blog
 paginate: 5
 ```
+
+Happy blogging!
