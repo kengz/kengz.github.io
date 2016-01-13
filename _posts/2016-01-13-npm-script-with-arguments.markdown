@@ -14,10 +14,12 @@ Recently I've had the need to set some environment variables while doing `npm st
 - [`npm start --<key>=<value>`](https://docs.npmjs.com/misc/config): really close to what I want! But it actually sets `$npm_config_<key>` instead of `$key`.
 
 My use case was to start my bots of different names, say:
+
 - `npm start` would deploy the *default* bot, 
 - `npm start --bot=veronica` would deploy the *other* bot named *veronica*
 
 I fiddled with `npm` and `bash` for hours and got it figured out. Basically we use the commands above, internally these would happen:
+
 - `$npm_config_bot` would be set only if `--bot=veronica` is passed.
 - `bash` checks if `$npm_config_bot` is set; if so it sets the `$bot=veronica`; else it sets the default `$bot=jarvis`
 - then the deploy script runs with the `$bot` variable.
