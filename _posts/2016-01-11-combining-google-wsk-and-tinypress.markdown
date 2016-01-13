@@ -3,6 +3,7 @@ published: true
 title: Combining Google WSK and Tinypress
 layout: post
 tags: [WSK, MDL, Tinypress, Github]
+categories: [dev]
 ---
 Hello!
 
