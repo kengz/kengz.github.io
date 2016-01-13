@@ -1,6 +1,6 @@
 ---
 published: true
-title: Github-flavored Markdown in Tinypress
+title: Github flavored Markdown in Tinypress
 layout: post
 tags: [Tinypress, Markdown]
 ---
