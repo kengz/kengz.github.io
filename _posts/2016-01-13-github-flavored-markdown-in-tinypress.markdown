@@ -3,6 +3,7 @@ published: true
 title: Github flavored Markdown in Tinypress
 layout: post
 tags: [Tinypress, Markdown]
+categories: [dev]
 ---
 Another hack for **Tinypress** - if you notice, it uses a different kind of `Markdown` than the one we're used to on Github.
 This can be fixed by changing the `./_config.yml` that Tinypress uses, like mine [here](https://github.com/kengz/kengz.github.io/blob/master/_config.yml), which looks like:
