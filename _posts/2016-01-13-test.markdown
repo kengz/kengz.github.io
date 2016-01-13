@@ -1,0 +1,6 @@
+---
+published: true
+title: Test
+layout: post
+---
+Testing Tinypress bug.
