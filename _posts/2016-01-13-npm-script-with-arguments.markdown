@@ -10,8 +10,8 @@ categories: [dev]
 Recently I've had the need to set some environment variables while doing `npm start`. `npm` commands allows you to pass arguments or set the env vars in several ways, but I wasn't quite satisfied:
 
 - loading an `.env` file, or prepending like `<key>=<value> npm start` isn't elegant.
-- [npm config set <key> <value>](https://docs.npmjs.com/cli/config): this is cumbersome af. Ain't gonna write that!
-- [npm start --<key>=<value>](https://docs.npmjs.com/misc/config): really close to what I want! But it actually sets `$npm_config_<key>` instead of `$key`.
+- [`npm config set <key> <value>`](https://docs.npmjs.com/cli/config): this is cumbersome af. Ain't gonna write that!
+- [`npm start --<key>=<value>`](https://docs.npmjs.com/misc/config): really close to what I want! But it actually sets `$npm_config_<key>` instead of `$key`.
 
 My use case was to start my bots of different names, say:
 - `npm start` would deploy the *default* bot, 
