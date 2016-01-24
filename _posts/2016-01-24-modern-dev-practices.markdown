@@ -79,6 +79,6 @@ Then, you write the unit tests, and run locally to make sure it works fine on yo
 
 The latest build status, code coverage, and dependency status are updated automatically on your Github pages. Altogether, you have a properly maintained repo, with automatic status update on the health and quality of your code. Users of your projects know they can rely on you when all badges are green, and know to watch out when some badges turn red. Neat, isn't it?
 
+I know this is a short post for such a long topic; there isn't space to elaborate fully how do you do each thing. But, there are many great tutorials out there, and I hope I've given you some good options to start with. Go check them out!
 
 If you like to see some examples, check out the pretty badges at my recent repos [`neo4jKB`](https://github.com/kengz/neo4jKB) and [`lomath`](https://github.com/kengz/lomath). Happy devving!
-
