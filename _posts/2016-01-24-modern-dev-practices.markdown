@@ -54,13 +54,13 @@ Unit testing alone isn't enough because, when you source code gets long, you get
 
 *Mocha* does that a bit through it's reporter, but there's a more powerful option, [Istanbul](https://github.com/gotwarlost/istanbul). It allows you to more carefully exclude the parts that should not be tested, so you can get up to 100% test coverage without looking sloppy. I use *Istanbul* for offline, local coverage reporting.
 
-Another option is [Coveralls.io](https://coveralls.io), which I use for online, deployed coverage reporting. This is nice because it automatically fetches the built tests from your CI (next up!), and updates a badge on your Github repo.
+Another option is [Coveralls.io](https://coveralls.io), which I use for online, deployed coverage reporting. This is nice because it automatically fetches the built tests from your CI (next up!), and updates a badge on your Github repo. Here's a sample [code coverage of neo4jKB](https://coveralls.io/github/kengz/neo4jKB?branch=master)
 
 
 
 #### Dependency check
 
-Today we build many things with open source dependencies. It's good to keep them always updated, and a way to monitor that is through [Gemnasium](https://gemnasium.com), which also automatically updates a badge on your Github repo.
+Today we build many things with open source dependencies. It's good to keep them always updated, and a way to monitor that is through [Gemnasium](https://gemnasium.com), which also automatically updates a badge on your Github repo. Here's a sample [dependency check of neo4jKB](https://gemnasium.com/kengz/neo4jKB)
 
 
 
@@ -68,7 +68,7 @@ Today we build many things with open source dependencies. It's good to keep them
 
 This is the final step where all the above falls into place. The idea of continuous integration is that you develop your code, write the unit tests, push to your Github, it then builds your project on several deployment environments and runs the tests. When all that is done, it pushes the code coverage to *Coveralls*, and reports the latest build status on a badge on your Github repo.
 
-My favorite is [Travis CI](https://travis-ci.org), and I've used it in many of my projects.
+My favorite is [Travis CI](https://travis-ci.org), and I've used it in many of my projects. Here's a sample [build status of neo4jKB](https://travis-ci.org/kengz/neo4jKB); you can see the Mocha tests there too.
 
 
 ### Putting it all together
