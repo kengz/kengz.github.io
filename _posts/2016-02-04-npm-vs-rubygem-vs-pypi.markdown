@@ -15,7 +15,7 @@ This week I try to find out if we can do stuff the **npm-way** with the package 
 
 
 
-## npm
+### npm
 
 Here's a [**sample npm file structure**](https://github.com/kengz/neo4jKB) that I wrote. Of course it's more well polished than the two below cuz I'm mainly a Node dev.
 
@@ -42,7 +42,7 @@ At the time of writing, *npm* has about 800Mil downloads per week. That's more t
 
 
 
-## RubyGem
+### RubyGem
 
 Here's a [**sample RubyGem file structure**](https://github.com/johnthedong/Deal_Aggregator) that I wrote. For guide, look at [DigitalOcean's](https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-ruby-applications-as-a-gem-using-rubygems).
 
@@ -67,7 +67,7 @@ Let's quickly go over how we work with *RubyGem*.
 
 
 
-## PyPI
+### PyPI
 
 Here's a [**sample PyPI file structure**](https://github.com/kengz/python-structure) that I wrote, along with a **simple guide**.
 
