@@ -1,0 +1,229 @@
+/* LaTeX-inspired CV styling for screen display */
+
+/* CSS reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Linux Libertine', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+  margin: 0;
+  padding: 2rem;
+  max-width: none;
+}
+
+#main {
+  max-width: 8.5in;
+  margin: 0 auto;
+  background: white;
+  padding: 1.5in 0.5in;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+h1 + p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 2rem 0 0.8rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #bdc3c7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+h2:first-of-type {
+  margin-top: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 1rem 0 0.3rem 0;
+}
+
+p, li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact information */
+#webaddress {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+#webaddress a {
+  color: #3498db;
+  text-decoration: none;
+  margin: 0 1.2rem;
+}
+
+#webaddress a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Lists */
+ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+/* Professional Experience styling */
+h3 + p strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+h3 + p em {
+  color: #7f8c8d;
+  font-style: italic;
+  float: right;
+  font-weight: normal;
+}
+
+/* Skills section */
+p strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Project sections */
+h4 {
+  color: #2c3e50;
+  margin-top: 1.2rem;
+}
+
+h4 + p {
+  margin-left: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Education section */
+h3 strong {
+  color: #2c3e50;
+}
+
+/* Code styling */
+code {
+  font-family: 'Source Code Pro', monospace;
+  background: #f8f9fa;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  #main {
+    padding: 1rem;
+    box-shadow: none;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  #webaddress {
+    font-size: 0.9rem;
+  }
+  
+  #webaddress a {
+    display: block;
+    margin: 0.2rem 0;
+  }
+}
+
+/* Print optimization hints */
+@media screen {
+  body {
+    background: #f5f5f5;
+  }
+}
+
+/* Subtle enhancements */
+::selection {
+  background: #3498db;
+  color: white;
+}
+
+/* Academic paper style margins and spacing */
+h2 + p,
+h2 + h3,
+h2 + ul {
+  margin-top: 0.8rem;
+}
+
+/* Clean separation between major sections */
+h2:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+/* Professional formatting for job entries */
+h3 + p {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+h3 + p:after {
+  content: '';
+  display: table;
+  clear: both;
+}
