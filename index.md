@@ -2,9 +2,10 @@
 AI Software Architect
 
 <div id="webaddress">
-<a href="mailto:kengzwl[at]gmail[dot]com">kengzwl[at]gmail</a>
+kengzwl[at]gmail
 | <a href="https://github.com/kengz">GitHub</a>
 | <a href="https://scholar.google.com/citations?user=J0aM_cEAAAAJ&hl=en">Scholar</a>
+| <a href="https://kengz.gitbook.io/blog/">Blog</a>
 </div>
 
 Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.com/dp/0135172381) and creator of [SLM-Lab](https://github.com/kengz/SLM-Lab). Specializes in PyTorch, MLOps, infrastructure, and system design.
