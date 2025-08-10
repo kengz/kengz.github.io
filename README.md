@@ -2,6 +2,8 @@
 
 A minimal, maintainable CV with LaTeX-inspired design - perfect for GitHub Pages.
 
+**Live at: https://kengz.github.io**
+
 ## Features
 
 - **Static HTML**: No build process needed
