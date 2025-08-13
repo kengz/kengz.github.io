@@ -17,7 +17,7 @@ body {
   color: #333;
   background: #fff;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   max-width: none;
 }
 
@@ -25,7 +25,7 @@ body {
   max-width: 8.5in;
   margin: 0 auto;
   background: white;
-  padding: 1.5in 0.5in;
+  padding: 2rem 1.5rem;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
@@ -168,12 +168,13 @@ code {
 /* Responsive design */
 @media screen and (max-width: 768px) {
   body {
-    padding: 1rem;
+    padding: 0;
   }
   
   #main {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     box-shadow: none;
+    margin: 0;
   }
   
   h1 {
