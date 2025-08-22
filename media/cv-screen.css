@@ -167,9 +167,11 @@ code {
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
-  body {
+  html, body {
     padding: 0;
+    margin: 0;
     background: #fff;
+    width: 100%;
   }
   
   #main {
@@ -177,6 +179,7 @@ code {
     box-shadow: none;
     margin: 0;
     max-width: none;
+    width: 100%;
   }
   
   h1 {
