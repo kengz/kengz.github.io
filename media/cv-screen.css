@@ -169,12 +169,14 @@ code {
 @media screen and (max-width: 768px) {
   body {
     padding: 0;
+    background: #fff;
   }
   
   #main {
     padding: 1.5rem 1rem;
     box-shadow: none;
     margin: 0;
+    max-width: none;
   }
   
   h1 {
