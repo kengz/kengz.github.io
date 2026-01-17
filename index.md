@@ -29,6 +29,8 @@ Quantum Foundations research on quantum paradoxes in causal structures.
 
 ## Speaking
 
+- ["Next-Gen Infrastructure for Scalable AI/ML at EA"](https://www.ea.com/news/ea-gdc-2025), GDC 2025
+- ["Scalable AI Infrastructure in the Gaming Industry"](https://www.nvidia.com/en-us/on-demand/session/gtc25-s73667/), NVIDIA GTC 2025
 - [SLM Lab posters](https://github.com/kengz/pytorch-conference), PyTorch Developer Conference 2018, 2019
 - [SuperDataScience podcast episode 551](https://www.superdatascience.com/podcast/deep-reinforcement-learning-with-wah-loon-keng), "Deep Reinforcement Learning" (2022)
 - [Numerous talks and tutorials](https://slm-lab.gitbook.io/slm-lab/publications-and-talks/talks-given-with-slm-lab) on deep reinforcement learning and SLM Lab
