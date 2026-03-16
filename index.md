@@ -13,7 +13,7 @@ Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.c
 ## Professional Experience
 
 **Senior IC & Architect** · Electronic Arts · *July 2022 - Present*  
-Direct central AI strategy and build internal platform for compute infra, GenAI and Agentic AI.
+Direct central AI strategy and build internal platform for training compute infra, GenAI and Agentic AI.
 
 **Senior AI Engineer** · AppLovin · *June 2020 - July 2022*  
 Deep learning applications for in-game sales optimization and fraud detection.
