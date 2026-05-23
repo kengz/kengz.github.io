@@ -1,5 +1,5 @@
 # Keng (Wah Loon)
-AI Software Architect
+Director of AI Architecture
 
 <div id="webaddress">
 kengzwl[at]gmail
@@ -8,18 +8,18 @@ kengzwl[at]gmail
 | <a href="https://kengz.gitbook.io/blog/">Blog</a>
 </div>
 
-Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.com/dp/0135172381) and [SLM-Lab](https://github.com/kengz/SLM-Lab). Specializes in PyTorch, MLOps, infrastructure, and system design.
+Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.com/dp/0135172381) and [SLM-Lab](https://github.com/kengz/SLM-Lab). Works across PyTorch, Kubernetes, MLOps, infrastructure, and system design.
 
 ## Professional Experience
 
-**Senior IC & Architect** · Electronic Arts · *July 2022 - Present*  
-Direct central AI strategy and build internal platform for training compute infra, GenAI and Agentic AI.
+**Director of AI Architecture** · Electronic Arts · *July 2022 - Present*  
+Design, build, and scale EA's central AI Platform: cloud training and Kubernetes serving infra, GenAI Gateway for unified, governed access to all AI models, and AI agents platform. Shape EA's central AI standards and governance.
 
 **Senior AI Engineer** · AppLovin · *June 2020 - July 2022*  
-Deep learning applications for in-game sales optimization and fraud detection.
+Built and operated production deep learning systems on Kubernetes, including fraud detection models protecting revenue across the game portfolio. Expanded into in-app monetization with recommendation systems for in-game purchases.
 
 **Senior AI Engineer** · Machine Zone · *April 2018 - May 2020*  
-Deep learning applications for game AI and sales optimization.
+Built and operated production deep learning systems on Kubernetes, including fraud detection models running across all games as critical revenue protection. Also contributed to RL research projects.
 
 **Software Engineer** · Eligible · *March 2016 - April 2018*  
 ML algorithms for search products and internal ML platform.
