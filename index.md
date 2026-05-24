@@ -6,6 +6,7 @@ kengzwl[at]gmail
 | <a href="https://github.com/kengz">GitHub</a>
 | <a href="https://scholar.google.com/citations?user=J0aM_cEAAAAJ&hl=en">Scholar</a>
 | <a href="https://kengz.gitbook.io/blog/">Blog</a>
+| <a href="keng_resume.pdf">Resume (PDF)</a>
 </div>
 
 Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.com/dp/0135172381) and [SLM-Lab](https://github.com/kengz/SLM-Lab). Works across PyTorch, Kubernetes, MLOps, infrastructure, and system design.

@@ -1,39 +1,43 @@
 # Keng's CV Site
 
-This is a personal CV website hosted on GitHub Pages.
+Personal CV site hosted on GitHub Pages, plus a one-page printable resume PDF.
 
-## File Structure
+## File structure
 
-- `index.html` - Main CV page (used for GitHub Pages)
-- `index.md` - Markdown version of CV (for easy copying elsewhere)
-- `media/cv-screen.css` - CSS for screen display with responsive design
-- `media/cv-print.css` - CSS optimized for printing
+- `index.html` — main CV page (published to GitHub Pages)
+- `index.md` — Markdown mirror of the CV (for easy copying to other surfaces)
+- `media/cv-screen.css`, `media/cv-print.css` — site styles
+- `resume.html` — **source** for the one-page printable resume
+- `keng_resume.pdf` — **rendered output**, linked from the site as "Resume (PDF)"
 
-## Key Points
+## Keep these in sync
 
-- **Both HTML and Markdown files need to be kept in sync** - Any content changes should be made to both files
-- The HTML file is what gets published to GitHub Pages
-- The Markdown file is maintained for easy copying to other platforms
+All four content surfaces describe the same CV. When updating any role, title, or contact info, update **all of them**:
 
-## Common Tasks
+1. `index.html`
+2. `index.md`
+3. `resume.html`
+4. Regenerate `keng_resume.pdf` (see below)
 
-### Content Updates
-When updating CV content, remember to update both:
-1. `index.md` - Markdown version
-2. `index.html` - HTML version
+## Rebuilding the PDF
 
-### CSS Structure
-- `cv-screen.css` handles the visual presentation and responsive design
-- Mobile breakpoint is at 768px
-- Main container (`#main`) has comfortable padding for readability
-- Print styles are separate in `cv-print.css`
+The PDF is rendered from `resume.html` via headless Chrome — no LaTeX or other toolchain needed.
 
-### Testing Changes
-After making changes, open `index.html` in browser to preview:
 ```bash
-open index.html
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf=keng_resume.pdf resume.html
 ```
 
-## Recent Changes
-- Removed "creator of" from SLM-Lab description
-- Optimized margins/padding for better mobile display while maintaining readability
+On Linux substitute `google-chrome` or `chromium`. The HTML uses `@page { size: letter; margin: 0.35in 0.45in; }` and is tuned to fit on one US Letter page; if you add content, check the page count stays at 1.
+
+Verify page count:
+
+```bash
+python3 -c "import re; print(len(re.findall(rb'/Type\s*/Page[^s]', open('keng_resume.pdf','rb').read())))"
+```
+
+## Notes
+
+- The old LaTeX-based resume lived at github.com/kengz/Resume. That repo is frozen; this site is the source of truth going forward.
+- Web fonts (Lato, Raleway) are loaded from Google Fonts when rendering; Chrome must have network access at render time, or fonts will fall back.
