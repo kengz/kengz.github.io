@@ -16,7 +16,7 @@ Co-author of [*Foundations of Deep Reinforcement Learning*](https://www.amazon.c
 Design, build, and scale EA's central AI Platform: cloud training and Kubernetes serving infra, GenAI Gateway for unified, governed access to all AI models, and AI agents platform. Shape EA's central AI standards and governance.
 
 **Senior AI Engineer** · AppLovin · *June 2020 - July 2022*  
-Built and operated production deep learning systems on Kubernetes, including fraud detection models protecting revenue across the game portfolio. Expanded into in-app monetization with recommendation systems for in-game purchases.
+Built and operated production deep learning systems on Kubernetes, including fraud detection models protecting revenue across the game portfolio. Expanded into recommendation systems for in-app purchases.
 
 **Senior AI Engineer** · Machine Zone · *April 2018 - May 2020*  
 Built and operated production deep learning systems on Kubernetes, including fraud detection models running across all games as critical revenue protection. Also contributed to RL research projects.
