@@ -30,22 +30,45 @@ A minimal, maintainable CV with LaTeX-inspired design - perfect for GitHub Pages
 - **Screen styles**: `media/cv-screen.css`
 - **Print styles**: `media/cv-print.css`
 
-## Generating PDF
+## Printable resume PDF
 
-1. Open your CV in a browser
-2. Use Print function (Ctrl/Cmd + P)  
-3. Select "Save as PDF"
-4. Turn OFF headers and footers
+A one-page printable resume lives alongside the site:
+
+- [`resume.html`](resume.html) — source (self-contained HTML + CSS, tuned for US Letter)
+- [`keng_resume.pdf`](keng_resume.pdf) — rendered output
+
+**Not linked from the live site** — shared on request only.
+
+### Rebuild
+
+The PDF is rendered from `resume.html` via headless Chrome. No LaTeX or other toolchain required.
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf=keng_resume.pdf resume.html
+```
+
+On Linux substitute `google-chrome` or `chromium`. Verify it's still one page:
+
+```bash
+python3 -c "import re; print(len(re.findall(rb'/Type\s*/Page[^s]', open('keng_resume.pdf','rb').read())))"
+```
+
+When updating CV content, change all four surfaces together: `index.html`, `index.md`, `resume.html`, then regenerate `keng_resume.pdf`. See `CLAUDE.md` for details.
 
 ## File Structure
 
 ```
-├── index.html           # Main CV page
-├── index.md            # Markdown version (for editing)
+├── index.html         # Main CV page (GitHub Pages)
+├── index.md           # Markdown mirror of the CV
+├── resume.html        # Source for the printable resume
+├── keng_resume.pdf    # Rendered one-page resume (not linked from site)
 ├── media/
-│   ├── cv-screen.css   # Screen styles  
-│   └── cv-print.css    # Print styles
-└── README.md           # This file
+│   ├── cv-screen.css  # Screen styles
+│   └── cv-print.css   # Print styles
+├── CLAUDE.md          # Notes for AI agents working on this repo
+└── README.md          # This file
 ```
 
 ## GitHub Pages Deployment
