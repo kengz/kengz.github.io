@@ -1,4 +1,4 @@
-# Keng (Wah Loon)
+# Keng, Wah Loon
 Director of AI Architecture
 
 <div id="webaddress">
