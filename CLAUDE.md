@@ -8,7 +8,7 @@ Personal CV site hosted on GitHub Pages, plus a one-page printable resume PDF.
 - `index.md` — Markdown mirror of the CV (for easy copying to other surfaces)
 - `media/cv-screen.css`, `media/cv-print.css` — site styles
 - `resume.html` — **source** for the one-page printable resume
-- `keng_resume.pdf` — **rendered output**, linked from the site as "Resume (PDF)"
+- `keng_resume.pdf` — **rendered output**; intentionally NOT linked from the site (shared on request only)
 
 ## Keep these in sync
 
